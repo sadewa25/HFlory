@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D69B00</color>
+    <color name="colorPrimaryDark">#F8D62B</color>
+    <color name="colorAccent">#1BD851</color>
+
+    <color name="colorRed">#F44336</color>
+
+
+    //TODO
+    <color name="colorNavigationIcon">#dae9f6</color>
+    <color name="colorNavigationText">#ffffff</color>
+</resources>

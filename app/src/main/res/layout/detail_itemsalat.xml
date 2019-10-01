@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_items"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <!--rvview-->
+    <RelativeLayout
+        android:id="@+id/rv_view"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            tools:src="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:layout_toRightOf="@id/img_item_photo"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_itemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="120dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    tools:text="@string/Alat" />
+
+                <TextView
+                    android:id="@+id/tv_itemTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_itemName"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    tools:text="waktu" />
+
+                <Button
+                    android:id="@+id/btn_power"
+                    android:layout_width="80dp"
+                    android:layout_height="40dp"
+                    android:layout_toRightOf="@id/tv_itemName"
+                    android:background="#2BF857"
+                    android:text="On"
+                    android:textAllCaps="false"
+                    android:textColor="#FFF" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_itemSuhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="40dp"
+                    tools:text="Suhu" />
+
+                <TextView
+                    android:id="@+id/tv_itemHumadity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_toRightOf="@id/tv_itemSuhu"
+                    tools:text="Humadity" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+    <!--cardview-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_suhu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rv_view"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/img_photo_suh"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="4dp"
+                android:scaleType="center"
+                tools:src="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/tv_nameSuh"
+                tools:text="Suhu"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_below="@id/card_suhu"
+        android:id="@+id/card_humadity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/img_photo_hum"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="4dp"
+                android:scaleType="center"
+                tools:src="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/tv_nameHum"
+                tools:text="Humadity"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_mati"
+        android:layout_below="@id/card_humadity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Matikan Alat"
+        android:textColor="#FFF"
+        android:background="@drawable/detail_alat_matikan"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@drawable/state_bnve"
+        app:itemTextColor="@drawable/state_bnve"
+        app:menu="@menu/navigation"></android.support.design.widget.BottomNavigationView>
+</RelativeLayout>
